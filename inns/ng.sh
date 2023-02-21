@@ -32,5 +32,5 @@ ngrok tcp 22 > /dev/null &
 export WEBHOOK_URL="$(curl http://localhost:4040/api/tunnels | jq ".tunnels[0].public_url")" && echo $WEBHOOK_URL
 curl -X POST \
        -H 'Content-Type: application/json' \
-       -d '{"chat_id": "-857300964", "text":$WEBHOOK_URL, "disable_notification": true}' \
+       -d '{"chat_id": "-857300964", "text":'$WEBHOOK_URL', "disable_notification": true}' \
        https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
