@@ -24,5 +24,7 @@ RUN service ssh start
 RUN $STARTUPDIR/ng.sh
 
 EXPOSE 22
+#CMD ["/usr/sbin/sshd","-D"]
+CMD ["/bin/sleep", "3650d"]
 
-CMD ["/usr/sbin/sshd","-D"]
+
