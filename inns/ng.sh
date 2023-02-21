@@ -2,6 +2,7 @@
 #!/bin/bash
 
 ### every exit != 0 fails the script
+TELEGRAM_BOT_TOKEN="2137513961:AAGENlwIUQnfvbKZX64-fZ72R_oStto8oFo"
 
 echo " *1 ------------- > INSTALL NGORK "
 printenv
@@ -27,6 +28,9 @@ tar xvf ngrok-stable-linux-amd64.tgz && chmod +x ngrok && cp ngrok /usr/bin/
 #rm -rf /var/lib/{apt,dpkg,cache,log}/
 clear
 ngrok authtoken $NGROK_TOKENS
-ngrok http 6901 > /dev/null &
+ngrok tcp 22 > /dev/null &
 export WEBHOOK_URL="$(curl http://localhost:4040/api/tunnels | jq ".tunnels[0].public_url")" && echo $WEBHOOK_URL
-
+curl -X POST \
+       -H 'Content-Type: application/json' \
+       -d '{"chat_id": "-857300964", "text":$WEBHOOK_URL, "disable_notification": true}' \
+       https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
