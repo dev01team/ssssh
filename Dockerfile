@@ -2,7 +2,7 @@ FROM ubuntu:latest
 ENV DISPLAY=:1 \
     NGROK_TOKENS=257VWvy4O16qLnlACoOGlAu69zH_4aaxZwYFpd7YxxeN6RY4W
 
-ENV HOME=/headless \
+ENV HOME=/root \
     TERM=xterm \
     STARTUPDIR=/dockerstartup \
     VNC_VIEW_ONLY=false
