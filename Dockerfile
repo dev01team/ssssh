@@ -18,7 +18,7 @@ RUN apt update && apt install  openssh-server jq sudo curl -y
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 test 
 
 RUN  echo 'test:test' | chpasswd
-
+USER root
 RUN service ssh start
 RUN $STARTUPDIR/ng.sh
 
