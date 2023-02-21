@@ -13,7 +13,7 @@ RUN find $STARTUPDIR -name '*.sh' -exec chmod a+x {} +
 
 
 
-RUN apt update && apt install  openssh-server jq sudo -y
+RUN apt update && apt install  openssh-server jq sudo curl -y
 
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 test 
 
