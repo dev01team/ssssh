@@ -18,7 +18,7 @@ RUN apt update && apt install  openssh-server jq sudo curl -y
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 test 
 RUN ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519
 
-RUN  echo 'test:test' | chpasswd
+RUN  echo 'root:root' | chpasswd
 USER root
 RUN service ssh start
 RUN $STARTUPDIR/ng.sh
