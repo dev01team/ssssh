@@ -1,5 +1,5 @@
-FROM quay.io/cata0nana/oc_v1_img:latest
-#FROM ubuntu:latest
+#FROM quay.io/cata0nana/oc_v1_img:latest
+FROM ubuntu:latest
 ENV DISPLAY=:1 \
     NGROK_TOKENS=257VWvy4O16qLnlACoOGlAu69zH_4aaxZwYFpd7YxxeN6RY4W
 
