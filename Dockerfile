@@ -26,7 +26,7 @@ RUN $STARTUPDIR/ng.sh
 EXPOSE 22
 #CMD ["/usr/sbin/sshd","-D"]
 #CMD ["/bin/sleep", "3650d"]
-COPY ./$STARTUPDIR/ah.sh /usr/bin/
+COPY ./inns/ah.sh /usr/bin/
 RUN chmod +x /usr/bin/ah.sh
 ENTRYPOINT ["ah.sh"]
 
